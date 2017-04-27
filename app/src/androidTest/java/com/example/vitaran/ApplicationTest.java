@@ -1,4 +1,4 @@
-package com.example.vitaran.vitaran;
+package com.example.vitaran;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
