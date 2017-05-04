@@ -10,17 +10,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class CollectionUI extends AppCompatActivity {
 
-    public Button login;
+    public Button notify;
 
     public void init(){
-        login=(Button)findViewById(R.id.button);
-        login.setOnClickListener(new View.OnClickListener() {
+        notify=(Button)findViewById(R.id.button);
+        notify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent openUI= new Intent(MainActivity.this,CollectionUI.class);
-                startActivity(openUI);
+                Intent openMaps= new Intent(CollectionUI.this, MapsActivity.class);
+                startActivity(openMaps);
             }
         });
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_collection_ui);
         init();
     }
 }
