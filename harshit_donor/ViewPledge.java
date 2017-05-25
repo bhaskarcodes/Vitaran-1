@@ -71,7 +71,7 @@ String pass;
                         String donorid = cat.getString("donorID");
                         //Toast.makeText(getApplicationContext(),name,Toast.LENGTH_SHORT).show();
                         if(donorid.equals(dID))
-                        arrcat.add(cname+"  "+iname+"  "+unit+"  "+quant);
+                        arrcat.add(cname+"  "+iname+"  "+quant+"  "+unit);
                     }
 
 // Create an ArrayAdapter using the string array and a default spinner layoutu

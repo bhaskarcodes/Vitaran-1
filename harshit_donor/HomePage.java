@@ -45,6 +45,16 @@ lo.setOnClickListener(new View.OnClickListener() {
         SharedPreferences sharedpreferences = getSharedPreferences(Constants.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
        // editor.clear();
+
+
+        /*
+        Bug-ID 113 related to testcase Login-5
+        Implementation on Suggestion :  Alternative provided
+        Suggestion : Provide logout functionality to exit the app.
+        Solution : On pressing quit application, the application simply closes and control returns to user's phone home page .
+        */
+
+
         editor.commit();
 
         Intent intent = new Intent(Intent.ACTION_MAIN);

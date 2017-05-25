@@ -78,6 +78,7 @@ String dlat,dlng;
     GoogleApiClient mGoogleApiClient;
     Location mCurrentLocation;
     String mLastUpdateTime;
+    int mycheck=0;
     protected void createLocationRequest() {
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(INTERVAL);
@@ -127,9 +128,12 @@ String dlat,dlng;
             @Override
             public void onClick(View v) {
                 if(checkBox.isChecked()){
+                    mycheck=0;
                     eaddress.setVisibility(View.INVISIBLE);
-                find.setVisibility(View.INVISIBLE);}
+                find.setVisibility(View.INVISIBLE);
+                }
                 else{
+                    mycheck=1;
                     eaddress.setVisibility(View.VISIBLE);
                     find.setVisibility(View.VISIBLE);
                 }
@@ -162,10 +166,26 @@ String dlat,dlng;
 
                 if(equantity.getText().toString().isEmpty()){
                     focusView = equantity;
-                    equantity.setError("cannot_b_blank");
+                    equantity.setError("Cannot Be Blank!");
                     Toast.makeText(getBaseContext(),"Quantity cannot be empty",Toast.LENGTH_SHORT).show();
                     return;
              }
+
+
+  /*
+        Bug-ID 114 related to testcase Quarks-36
+        Bug :  Incorrect confirmation toast when location is null
+        Solution : we have set a check variable mycheck that will be set to 1 when the default location checkbox is not checked
+        */
+
+              if(eaddress.getText().toString().isEmpty()&& mycheck==1){
+                     focusView = eaddress;
+                    eaddress.setError("Must Click on Find Me!");
+                    Toast.makeText(getBaseContext(),"Click on Find Me!",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
                 Toast.makeText(getBaseContext(),"Item Succesfully added",Toast.LENGTH_LONG).show();
                 count++;
                 if(edetails.getVisibility()==View.VISIBLE)
