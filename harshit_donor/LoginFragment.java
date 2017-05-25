@@ -151,7 +151,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
                         for(String p : serverResponse){
 
-                            Toast.makeText(getActivity(),p,Toast.LENGTH_LONG).show();
+                           // Toast.makeText(getActivity(),p,Toast.LENGTH_LONG).show();
 
                         }
                         //Toast.makeText(getActivity(),"len="+serverResponse.length,Toast.LENGTH_LONG).show();
@@ -170,7 +170,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                             editor.putString(Constants.EMAIL_SHARED_PREF, email);
                             editor.putString(Constants.NAME_SHARED_PREF, serverResponse[1]);
                             editor.putString(Constants.LAT_SHARED_PREF, serverResponse[2]);
-                            Toast.makeText(getActivity(),"lat_is:"+serverResponse[1]+"\n"+serverResponse[2]+"\n"+serverResponse[3],Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getActivity(),"lat_is:"+serverResponse[1]+"\n"+serverResponse[2]+"\n"+serverResponse[3],Toast.LENGTH_LONG).show();
                             editor.putString(Constants.LNG_SHARED_PREF, serverResponse[3]);
 
 
@@ -182,8 +182,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                             startActivity(intent);*/
                             String result = "Closing Login Fragment : "+pref.getBoolean(Constants.LOGGEDIN_SHARED_PREF,false);
                             //Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
-                            Toast.makeText(getActivity(), result + "Logging in as : " +
-                                    pref.getString(Constants.NAME_SHARED_PREF,"Not found"), Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getActivity(), result + "Logging in as : " + pref.getString(Constants.NAME_SHARED_PREF,"Not found"), Toast.LENGTH_LONG).show();
                             et_email.setText("");
                             et_password.setText("");
 

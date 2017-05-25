@@ -20,7 +20,6 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
        // SharedPreferences sharedPreferences = this.getSharedPreferences(Constants.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-
         //  dname="rahul";//getIntent().getStringExtra("nam");
         //dlat="52";//getIntent().getStringExtra("lat");
         //dlong="114";//getIntent().getStringExtra("long");
@@ -45,7 +44,7 @@ lo.setOnClickListener(new View.OnClickListener() {
 
         SharedPreferences sharedpreferences = getSharedPreferences(Constants.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.clear();
+       // editor.clear();
         editor.commit();
 
         Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -55,14 +54,14 @@ lo.setOnClickListener(new View.OnClickListener() {
 
     }
 });
-        t = (TextView)findViewById(R.id.textView7);
+       /* t = (TextView)findViewById(R.id.textView7);
         try {
             //t.setText(tpledge);
         }
         catch(Exception e)
         {
            // t.setText("0");
-        }
+        }*/
         mp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

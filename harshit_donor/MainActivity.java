@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements OpenProfileInterf
                 .addOnConnectionFailedListener(this)
                 .build();
 
-   //lkjlkjlkjlkjlkjlkjlkjlkjlkjlkjlkjlkjlkjlljlkjljlkjlkjlkjlk
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,showURLdonor,null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -182,7 +182,12 @@ RegisterFragment.arr=arrdonor;
 
         super.onStart();
 
-        //bhaskar added this
+       /*
+        Bug-ID 68 related to testcase Quarks-6
+        Bug Status :  Solved
+        Bug : Location Tracking does not work
+        Solution : Location Tracking works, using Fused Location now.
+        */
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
@@ -201,7 +206,6 @@ RegisterFragment.arr=arrdonor;
             Log.d(TAG, "onStart fired ..............");
             mGoogleApiClient.connect();
         }
-        //bhaskar added till here
     }
 
     @Override

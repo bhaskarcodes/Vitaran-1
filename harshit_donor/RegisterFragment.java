@@ -358,12 +358,19 @@ et_address.setText(RegisterFragment.latitude+"$"+RegisterFragment.longitude);
 
     private boolean isValidEmailID(EditText et) {
         email = et.getText().toString().trim();
-        //jlhgligkjab.fhsldhbf.ahsbdfbas.dkhbf.asydgf.hkab.hfajhvd.fjhas.djhfb/asdf
+
+                        /*
+                            Bug ID-85 related to testcase Quarks-33
+                            Bug Status :  Solved
+                            Bug : Don't allow redundancy in email
+                            Solution : Fetched all emails in arr from database and checking if email already exists in arr.
+                        */
+
+
         if(arr.contains(email)){
             et.setError("Email address is already registered..!");
             return false;
         }
-        //fasdhfouahsdofhaojsdhfouahdfouaskdjnfausdhfouhasdjfna;osdfoajsnd;fjnasdf
         if (email.isEmpty()) {
             et.setError("This field is required");
             return false;

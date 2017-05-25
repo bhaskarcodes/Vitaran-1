@@ -266,17 +266,22 @@ String dlat,dlng;
 
     }
 
-    //prstntjkabskhdgkhabskhdba1
+
     @Override
     public void onStart() {
         super.onStart();
         //bhaskar added this
 
-        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED)
             {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_FINE_LOCATION);
+            }
+            else{
+                //Log.d(TAG, "onStart fired ..............");
+                mGoogleApiClient.connect();
+
             }
         }
         else {
@@ -441,8 +446,6 @@ String dlat,dlng;
            // Toast.makeText(parent.getContext(), "Unit Selected: " + unit, Toast.LENGTH_SHORT).show();
             }
     }
-
-
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
