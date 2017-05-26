@@ -172,6 +172,22 @@ String dlat,dlng;
              }
 
 
+
+
+
+               Spinner spinner = (Spinner)findViewById(R.id.sitem);
+               String sitemtext = spinner.getSelectedItem().toString();
+
+
+                if(edetails.getText().toString().isEmpty() && sitemtext.equalsIgnoreCase("Others")){
+                    focusView = edetails;
+                    edetails.setError("Cannot Be Blank!");
+                    Toast.makeText(getBaseContext(),"Item name cannot be Other, must enter New Item Name",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+
   /*
         Bug-ID 114 related to testcase Quarks-36
         Bug :  Incorrect confirmation toast when location is null
