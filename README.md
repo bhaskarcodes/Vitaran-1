@@ -24,7 +24,7 @@ There are three apps :
 3. Design Document : April 11, 2017
 4. QA Plan Approval :   April 11, 2017
 5. Test Plan  Approval : April 27, 2017
-6. Release 0.1 :May 11, 2017
+6. Release 0.1 :May 12, 2017
 7. Release 0.2 : May 26, 2017
 8. Release 1.0 : May 27, 2017
 
